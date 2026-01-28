@@ -1,4 +1,4 @@
-export default function RegisterPage() {
+export default function Register() {
   return (
     <div>
       <h1>Register Page</h1>

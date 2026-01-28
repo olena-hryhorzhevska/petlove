@@ -1,14 +1,14 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import HomePage from "./pages/Home/Home.tsx";
-import LoginPage from "./pages/Login/Login.tsx";
-import RegisterPage from "./pages/Register/Register.tsx";
+import Home from "./pages/Home/Home";
+import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
 
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

@@ -1,41 +1,11 @@
-import { Link } from "react-router-dom";
+import Header from "../../components/Header/Header";
 import css from "./Home.module.css";
 
 export default function HomePage() {
   return (
     <main className="container">
       <section className={css.heroCard}>
-        <header className={css.header}>
-          <Link className={css.logo} to="/">
-            <img
-              src="/images/logowhite.png"
-              alt="Petlove"
-              className={css.logoImage}
-            />
-          </Link>
-
-          <nav className={css.nav}>
-            <a className={css.navLink} href="#news">
-              News
-            </a>
-            <a className={css.navLink} href="#find">
-              Find pet
-            </a>
-            <a className={css.navLink} href="#friends">
-              Our friends
-            </a>
-          </nav>
-
-          <div className={css.auth}>
-            <Link className={css.loginBtn} to="/login">
-              Log in
-            </Link>
-            <Link className={css.registerBtn} to="/register">
-              Registration
-            </Link>
-          </div>
-        </header>
-
+        <Header variant="dark"/>
         <div className={css.heroContent}>
           <h1 className={css.title}>
             Take good <span className={css.titleLight}>care</span> of your small

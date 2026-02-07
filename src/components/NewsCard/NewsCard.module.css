@@ -1,0 +1,69 @@
+.newsCard {
+  width: 361px;
+  border-radius: 15px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-bottom: 28px;
+}
+
+.newsCardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.newsImgCard {
+  object-fit: cover;
+  width: 100%;
+  height: 226px;
+  border-radius: 15px;
+}
+
+.newsCardContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.newsCardTitle {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 130%;
+  letter-spacing: -0.03em;
+  color: var(--color-black);
+  min-height: calc(1.3em * 2);
+}
+
+.newsCardText {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+}
+
+.newsCardDate {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.02em;
+  color: rgba(38, 38, 38, 0.5);
+}
+.newsCardReadMore {
+  font-family: var(--font-family);
+font-weight: 500;
+font-size: 16px;
+line-height: 125%;
+letter-spacing: -0.02em;
+text-decoration: underline;
+text-decoration-skip-ink: none;
+color: var(--color-dark-yellow);
+text-decoration: underline;
+text-decoration-skip-ink: none;
+}

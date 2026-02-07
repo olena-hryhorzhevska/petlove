@@ -40,10 +40,20 @@ ol {
   margin: 0 auto;
 }
 
+.containerWide {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 0 20px;
+}
+
 @media (min-width: 768px) {
   .container {
     padding: 16px 32px;
     max-width: 768px;
+  }
+
+  .containerWide {
+    padding: 0 32px;
   }
 }
 
@@ -51,5 +61,8 @@ ol {
   .container {
     max-width: 1280px;
     padding: 16px 32px;
+  }
+  .containerWide {
+    padding: 43px 64px 80px; 
   }
 }

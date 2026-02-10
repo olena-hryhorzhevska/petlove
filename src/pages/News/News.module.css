@@ -16,6 +16,38 @@
   line-height: 100%;
   letter-spacing: -0.03em;
   color: var(--color-black);
-  margin-bottom: 60px;
+}
+
+.newsCradsTitleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+    margin-bottom: 60px;
   margin-top: 107px;
 }
+
+.newsCardsSearch {
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  padding: 14px 14px 14px;
+  width: 230px;
+  transition: border-color 0.3s ease;
+}
+
+.newsCardsSearch:focus {
+  outline: none;
+  border-color: var(--color-dark-yellow);
+}
+
+.newsCardsSearch::placeholder {
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 16px;
+line-height: 125%;
+letter-spacing: -0.03em;
+color: rgba(38, 38, 38, 0.5);
+}
+
+.searchIcon {
+  color: var(--color-black);
+} 

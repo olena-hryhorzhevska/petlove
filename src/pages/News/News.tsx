@@ -40,7 +40,21 @@ export default function News() {
   return (
     <div className={`containerWide ${styles.newsContainer}`}>
       <Header variant="light" />
-      <h1 className={styles.newsCardsMainTitle}>News</h1>
+      <div className={styles.newsCradsTitleWrapper}>
+        <h1 className={styles.newsCardsMainTitle}>News</h1>
+        <input
+          className={styles.newsCardsSearch}
+          type="text"
+          placeholder="Search"
+        />
+      </div>
+      <svg
+        width="18"
+        height="18"
+        className={styles.searchIcon}
+      >
+        <use href="/icons/sprite.svg#icon-search" />
+      </svg>
       {isFetching && <p>Updating...</p>}
       <ul className={styles.newsCards}>
         {data?.results.map((item) => (

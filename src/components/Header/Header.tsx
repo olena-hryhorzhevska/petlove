@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
 
 type Props = {
@@ -6,6 +6,10 @@ type Props = {
 };
 
 export default function Header({ variant = "dark" }: Props) {
+
+  const getNavClass = ({ isActive }: { isActive: boolean }) =>
+    `${styles.navLink} ${isActive ? styles.navBorder : ""}`;
+
   return (
     <header className={`${styles.header} ${styles[variant]}`}>
       <Link className={styles.logo} to="/">
@@ -19,15 +23,15 @@ export default function Header({ variant = "dark" }: Props) {
       </Link>
 
       <nav className={styles.nav}>
-        <Link className={styles.navLink} to="/news">
+        <NavLink className={getNavClass} to="/news">
           News
-        </Link>
-        <Link className={styles.navLink} to="/find">
+        </NavLink>
+        <NavLink className={getNavClass} to="/find">
           Find pet
-        </Link>
-        <Link className={styles.navLink} to="/friends">
+        </NavLink>
+        <NavLink className={getNavClass} to="/friends">
           Our friends
-        </Link>
+        </NavLink>
       </nav>
 
       <div className={styles.auth}>

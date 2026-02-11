@@ -7,16 +7,18 @@ import Header from "../../components/Header/Header";
 import { useState } from "react";
 import Pagination from "../../components/Pagination/Pagination";
 
-const perPage = 6;
+const limit = 6;
 
 const fetchNews = async (
   page: number,
-  perPage: number
+  limit: number,
+  searchInput: string
 ): Promise<NewsResponse> => {
   const { data } = await api.get<NewsResponse>("/news", {
     params: {
       page,
-      perPage,
+      limit,
+      keyword: searchInput,
     },
   });
   return data;
@@ -24,11 +26,13 @@ const fetchNews = async (
 
 export default function News() {
   const [page, setPage] = useState(1);
+  const [searchInput, setSearchInput] = useState("");
 
   const { data, isLoading, error, isError, isFetching } = useQuery({
-    queryKey: ["news", page, perPage],
-    queryFn: () => fetchNews(page, perPage),
+    queryKey: ["news", page, limit, searchInput],
+    queryFn: () => fetchNews(page, limit, searchInput),
     placeholderData: (prev) => prev,
+    staleTime: 60_000,
   });
 
   if (isLoading) return <p>Loading...</p>;
@@ -37,24 +41,27 @@ export default function News() {
 
   const totalPages = data?.totalPages;
 
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(e.target.value);
+  };
+
   return (
     <div className={`containerWide ${styles.newsContainer}`}>
       <Header variant="light" />
       <div className={styles.newsCradsTitleWrapper}>
         <h1 className={styles.newsCardsMainTitle}>News</h1>
-        <input
-          className={styles.newsCardsSearch}
-          type="text"
-          placeholder="Search"
-        />
+        <div className={styles.newsCardsSearchWrapper}>
+          <input
+            className={styles.newsCardsSearch}
+            type="text"
+            placeholder="Search"
+            onChange={handleSearchChange}
+          />
+          <svg width="18" height="18" className={styles.searchIcon}>
+            <use href="/icons/sprite.svg#icon-search" />
+          </svg>
+        </div>
       </div>
-      <svg
-        width="18"
-        height="18"
-        className={styles.searchIcon}
-      >
-        <use href="/icons/sprite.svg#icon-search" />
-      </svg>
       {isFetching && <p>Updating...</p>}
       <ul className={styles.newsCards}>
         {data?.results.map((item) => (

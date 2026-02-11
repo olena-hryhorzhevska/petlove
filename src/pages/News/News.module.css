@@ -22,7 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-    margin-bottom: 60px;
+  margin-bottom: 60px;
   margin-top: 107px;
 }
 
@@ -40,14 +40,24 @@
 }
 
 .newsCardsSearch::placeholder {
-font-family: var(--font-family);
-font-weight: 500;
-font-size: 16px;
-line-height: 125%;
-letter-spacing: -0.03em;
-color: rgba(38, 38, 38, 0.5);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.newsCardsSearchWrapper {
+  position: relative;
 }
 
 .searchIcon {
+  fill: none;
   color: var(--color-black);
-} 
+  position: absolute;
+  pointer-events: none;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+}

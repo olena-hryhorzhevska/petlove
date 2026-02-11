@@ -54,33 +54,65 @@
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
+.dark .navLink.navBorder {
+  border: 1px solid var(--color-dark-yellow);
+}
+
 .dark .loginBtn {
   color: var(--color-white);
   border: 1px solid rgba(255, 255, 255, 0.4);
   background: transparent;
   padding: 15px 35px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dark .loginBtn:hover {
+  color: var(--color-dark-yellow);
+  background-color: var(--color-light-yellow);
 }
 
 .dark .registerBtn {
   color: var(--color-dark-yellow);
   background: var(--color-light-yellow);
   padding: 15px 20px;
+
+  border: 1px solid transparent; 
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
+.dark .registerBtn:hover {
+  color: var(--color-white);
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.4);
+}
 
 .light .navLink {
   color: var(--color-black);
   border: 1px solid rgba(38, 38, 38, 0.15);
 }
 
+.light .navLink.navBorder {
+  border: 1px solid var(--color-dark-yellow);
+}
+
 .light .loginBtn {
   background-color: var(--color-dark-yellow);
   padding: 15px 35px;
-    color: var(--color-white);
+  color: var(--color-white);
+  transition: background-color 0.2s ease;
+}
+
+.light .loginBtn:hover {
+  background-color: #f9b020;
 }
 
 .light .registerBtn {
   color: var(--color-dark-yellow);
   background: var(--color-light-yellow);
   padding: 15px 20px;
+  transition: background-color 0.2s ease;
+}
+
+.light .registerBtn:hover {
+  background-color: #fbe7c1;
 }

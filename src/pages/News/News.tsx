@@ -6,6 +6,7 @@ import styles from "./News.module.css";
 import Header from "../../components/Header/Header";
 import { useState } from "react";
 import Pagination from "../../components/Pagination/Pagination";
+import Loader from "../../components/Loader/Loader";
 
 const limit = 6;
 
@@ -28,14 +29,14 @@ export default function News() {
   const [page, setPage] = useState(1);
   const [searchInput, setSearchInput] = useState("");
 
-  const { data, isLoading, error, isError, isFetching } = useQuery({
+  const { data, isLoading, error, isError } = useQuery({
     queryKey: ["news", page, limit, searchInput],
     queryFn: () => fetchNews(page, limit, searchInput),
     placeholderData: (prev) => prev,
-    staleTime: 60_000,
+
   });
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <Loader/>;
   if (isError) return <p>Error: {(error as Error).message}</p>;
   if (!data) return null;
 
@@ -62,7 +63,6 @@ export default function News() {
           </svg>
         </div>
       </div>
-      {isFetching && <p>Updating...</p>}
       <ul className={styles.newsCards}>
         {data?.results.map((item) => (
           <NewsCard key={item._id} item={item} />

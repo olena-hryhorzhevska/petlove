@@ -1,57 +1,86 @@
-.heroCard {
-  height: 384px;
-  width: 100%;
-  border-radius: 60px;
-  background: var(--color-dark-yellow);
-  position: relative;
-  padding: 27px 64px 32px;
-  display: flex;
-  flex-direction: column;
+@media (min-width: 768px) {
+  .heroCard {
+    padding: 27px 32px 16px;
+    height: 496px;
+    background: var(--color-dark-yellow);
+    border-radius: 60px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 80px;
+    line-height: 96%;
+    letter-spacing: -0.03em;
+    color: var(--color-white);
+    max-width: 640px;
+    margin: 0;
+  }
+  .titleLight {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .heroContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .subtitle {
+    margin: 0;
+    color: var(--color-white);
+    max-width: 255px;
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 122%;
+    letter-spacing: -0.02em;
+    align-self: flex-end;
+  }
+
+  .imageCard {
+    height: 496px;
+    border-radius: 60px;
+    overflow: hidden;
+    position: relative;
+  }
+
+    .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 }
 
-.title {
-  font-family: var(--font-family);
-  font-weight: 700;
-  font-size: 90px;
-  line-height: 97%;
-  letter-spacing: -0.03em;
-  color: var(--color-white);
-  max-width: 760px;
-  margin: 0;
-}
+@media (min-width: 1280px) {
+  .heroCard {
+    height: 384px;
+    padding: 27px 64px 32px;
+  }
 
-.titleLight {
-  color: rgba(255, 255, 255, 0.4);
-}
+  .title {
+    font-size: 90px;
+    line-height: 97%;
+    max-width: 760px;
+  }
 
-.heroContent {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-top: auto;
-}
+  .heroContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto;
+  }
 
-.subtitle {
-  margin: 0;
-  color: var(--color-white);
-  max-width: 255px;
-  font-family: var(--font-family);
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 122%;
-  letter-spacing: -0.02em;
-}
-
-.imageCard {
-  height: 384px;
-  border-radius: 60px;
-  overflow: hidden;
-  position: relative;
-}
-
-.image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  .imageCard {
+    height: 384px;
+  }
 }

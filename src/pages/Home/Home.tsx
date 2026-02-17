@@ -20,15 +20,24 @@ export default function HomePage() {
       </section>
 
       <section className={css.imageCard}>
-        <img
-          className={css.image}
-          src="/images/tab-hero-photo-1x.jpg"
-          srcSet="
-    /images/tab-hero-photo-1x.jpg 1x,
-    /images/tab-hero-photo-2x.jpg 2x
-  "
-          alt="Woman hugging a dog"
-        />
+        <picture>
+          <source
+            media="(min-width: 1280px)"
+            srcSet="/images/hero-photo-1x.jpg 1x, /images/hero-photo-2x.jpg 2x"
+          />
+
+          <source
+            media="(min-width: 768px)"
+            srcSet="/images/tab-hero-photo-1x.jpg 1x, /images/tab-hero-photo-2x.jpg 2x"
+          />
+
+          <img
+            className={css.image}
+            src="/images/mob-hero-photo-1x.jpg"
+            srcSet="/images/mob-hero-photo-1x.jpg 1x, /images/mob-hero-photo-2x.jpg 2x"
+            alt="Woman hugging a dog"
+          />
+        </picture>
       </section>
     </main>
   );

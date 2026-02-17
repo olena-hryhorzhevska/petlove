@@ -1,3 +1,12 @@
+/* Hide nav menu for mobile and tablet */
+
+.nav,
+.auth {
+  display: none;
+}
+
+/* Mobile styles */
+
 .burgerBtn {
   border: none;
   background: transparent;
@@ -15,36 +24,55 @@
   justify-content: flex-end;
 }
 
-.menuPanel {
-  width: 260px;
-  height: 100%;
-  background: #fff;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
 .menuTop {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.closeBtn {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  border: none;
-  background: transparent;
-  font-size: 28px;
-  cursor: pointer;
-  line-height: 1;
-}
-
 .menuLogo {
   height: 28px;
   width: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.logoImage {
+  width: auto;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+}
+
+.dark .burgerBtn {
+  color: var(--color-white);
+}
+
+.light .burgerBtn {
+  color: var(--color-black);
+}
+
+.menuPanel {
+  width: 218px;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 28px;
+  right: 20px;
+  border: none;
+  background: transparent;
+  font-size: 30px;
+  cursor: pointer;
+  color: var(--color-black);
 }
 
 .menuNav {
@@ -53,114 +81,100 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
+}
+
+.menuNav .navLink {
+  width: 119px;
+  text-align: center;
+  padding: 15px 0;
+  border-radius: 30px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--color-black);
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  background: transparent;
+}
+
+.menuNav .navLink.navBorder {
+  border-color: var(--color-dark-yellow);
 }
 
 .menuAuth {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 12px;
-  padding: 0 24px 24px;
+  gap: 8px;
+  padding-bottom: 40px;
 }
 
-/* Hide nav menu for mobile and tablet */
+.menuLoginBtn,
+.menuRegisterBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  height: 42px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  font-family: var(--font-family);
+  text-transform: uppercase;
+  text-decoration: none;
+}
 
-.nav,
-.auth {
-  display: none;
+.menuLoginBtn {
+  background-color: var(--color-dark-yellow);
+  color: var(--color-white);
+  max-width: 178px;
+}
+
+.menuRegisterBtn {
+  background: var(--color-light-yellow);
+  color: var(--color-dark-yellow);
+  max-width: 178px;
 }
 
 /* Tablet styles */
 
 @media (min-width: 768px) {
-  .header {
-    display: flex;
-    align-items: center;
-  }
   .logoImage {
-    width: auto;
     height: 28px;
-    object-fit: contain;
-    display: block;
-  }
-
-  .dark .burgerBtn {
-    color: var(--color-white);
-  }
-
-    .light .burgerBtn {
-    color: var(--color-black);
   }
 
   .menuPanel {
     width: 374px;
-    height: 100%;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    position: relative;
   }
 
   .closeBtn {
-    position: absolute;
     top: 39px;
     right: 32px;
-    border: none;
-    background: transparent;
     font-size: 24px;
-    cursor: pointer;
-    color: var(--color-black);
-  }
-
-  .menuNav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+    padding: 0;
   }
 
   .menuNav .navLink {
     width: 120px;
-    text-align: center;
-    padding: 15px 0;
-    border-radius: 30px;
-    font-family: var(--font-family);
-    font-weight: 500;
     font-size: 16px;
-    text-decoration: none;
-    color: var(--color-black);
     line-height: 125%;
-    letter-spacing: -0.03em;
     border: 1px solid rgba(38, 38, 38, 0.4);
-    background: transparent;
-  }
-
-  .menuNav .navLink.navBorder {
-    border-color: var(--color-dark-yellow);
   }
 
   .menuAuth {
     display: flex;
-    justify-content: center;
-    gap: 8px;
-    padding-bottom: 40px;
+    flex-direction: row;
   }
 
   .menuLoginBtn,
   .menuRegisterBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30px;
     height: 50px;
-    font-weight: 500;
     font-size: 15px;
     line-height: 125%;
-    letter-spacing: -0.03em;
-    font-family: var(--font-family);
-    text-transform: uppercase;
-    text-decoration: none;
   }
 
   .menuLoginBtn {

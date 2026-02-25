@@ -4,9 +4,13 @@ import { useState } from "react";
 
 type Props = {
   variant?: "dark" | "light";
+  showAuthOnTablet?: boolean;
 };
 
-export default function Header({ variant = "dark" }: Props) {
+export default function Header({
+  variant = "dark",
+  showAuthOnTablet = false,
+}: Props) {
   const [modalOpen, setModalOpen] = useState(false);
 
   const getNavClass = ({ isActive }: { isActive: boolean }) =>
@@ -43,7 +47,11 @@ export default function Header({ variant = "dark" }: Props) {
             Our friends
           </NavLink>
         </nav>
-        <div className={styles.auth}>
+        <div
+          className={`${styles.auth} ${
+            showAuthOnTablet ? styles.authTabletVisible : ""
+          }`}
+        >
           <Link className={styles.loginBtn} to="/login">
             Log in
           </Link>
@@ -90,7 +98,11 @@ export default function Header({ variant = "dark" }: Props) {
               </NavLink>
             </nav>
             <div className={styles.menuAuth}>
-              <Link className={styles.menuLoginBtn} to="/login" onClick={closeMenu}>
+              <Link
+                className={styles.menuLoginBtn}
+                to="/login"
+                onClick={closeMenu}
+              >
                 Log in
               </Link>
               <Link

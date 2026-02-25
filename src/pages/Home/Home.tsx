@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <main className="container">
       <section className={css.heroCard}>
-        <Header variant="dark" />
+        <Header variant="dark" showAuthOnTablet={false} />
         <div className={css.heroContent}>
           <h1 className={css.title}>
             Take good <span className={css.titleLight}>care</span> of your small

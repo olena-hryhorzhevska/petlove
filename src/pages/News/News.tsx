@@ -48,7 +48,7 @@ export default function News() {
 
   return (
     <div className={`containerWide ${styles.newsContainer}`}>
-      <Header variant="light" />
+      <Header variant="light" showAuthOnTablet />
       <div className={styles.newsCradsTitleWrapper}>
         <h1 className={styles.newsCardsMainTitle}>News</h1>
         <div className={styles.newsCardsSearchWrapper}>

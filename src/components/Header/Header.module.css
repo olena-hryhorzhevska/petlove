@@ -10,7 +10,8 @@
 .burgerBtn {
   border: none;
   background: transparent;
-  font-size: 36px;
+  font-size: 32px;
+  padding: 0;
   cursor: pointer;
   display: inline-flex;
   margin-left: auto;
@@ -133,74 +134,79 @@
 .menuLoginBtn {
   background-color: var(--color-dark-yellow);
   color: var(--color-white);
+  transition: background-color 0.2s ease;
 }
 
 .menuRegisterBtn {
   background: var(--color-light-yellow);
   color: var(--color-dark-yellow);
+  transition: background-color 0.2s ease;
 }
 
-  .loginBtn,
-  .registerBtn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 125%;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
-  }
+.loginBtn,
+.registerBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
 
-  .dark .loginBtn {
-    color: var(--color-white);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    background: transparent;
-    padding: 15px 35px;
-    transition: background-color 0.2s ease, color 0.2s ease;
-  }
-  .dark .loginBtn:hover {
-    color: var(--color-dark-yellow);
-    background-color: var(--color-light-yellow);
-  }
+.dark .loginBtn {
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  padding: 15px 35px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.dark .loginBtn:hover {
+  color: var(--color-dark-yellow);
+  background-color: var(--color-light-yellow);
+}
 
-  .dark .registerBtn {
-    color: var(--color-dark-yellow);
-    background: var(--color-light-yellow);
-    padding: 15px 20px;
-    border: 1px solid transparent;
-    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
-  }
-  .dark .registerBtn:hover {
-    color: var(--color-white);
-    background: transparent;
-    border-color: rgba(255, 255, 255, 0.4);
-  }
+.dark .registerBtn {
+  color: var(--color-dark-yellow);
+  background: var(--color-light-yellow);
+  padding: 15px 20px;
+  border: 1px solid transparent;
+  transition: color 0.2s ease, background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+.dark .registerBtn:hover {
+  color: var(--color-white);
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.4);
+}
 
-  /* variant light */
-  .light .loginBtn {
-    background-color: var(--color-dark-yellow);
-    padding: 15px 35px;
-    color: var(--color-white);
-    transition: background-color 0.2s ease;
-  }
-  .light .loginBtn:hover {
-    background-color: #f9b020;
-  }
+/* variant light */
+.light .loginBtn {
+  background-color: var(--color-dark-yellow);
+  padding: 15px 35px;
+  color: var(--color-white);
+  transition: background-color 0.2s ease;
+}
+.light .loginBtn:hover,
+.light .menuLoginBtn:hover {
+  background-color: #f9b020;
+}
 
-  .light .registerBtn {
-    color: var(--color-dark-yellow);
-    background: var(--color-light-yellow);
-    padding: 15px 20px;
-    transition: background-color 0.2s ease;
-  }
-  .light .registerBtn:hover {
-    background-color: #fbe7c1;
-  }
+.light .registerBtn {
+  color: var(--color-dark-yellow);
+  background: var(--color-light-yellow);
+  padding: 15px 20px;
+  transition: background-color 0.2s ease;
+}
+.light .registerBtn:hover,
+.light .menuRegisterBtn:hover {
+  background-color: #fbe7c1;
+}
 
 /* Tablet styles */
 
@@ -208,17 +214,16 @@
   .authTabletVisible {
     display: flex;
     gap: 8px;
-    margin-left: auto;  
+    margin-left: auto;
     align-items: center;
   }
 
   .burgerBtn {
-    margin-left: 16px; 
+    margin-left: 16px;
   }
 }
 
 @media (min-width: 768px) {
-
   .logoImage {
     height: 28px;
   }
@@ -255,14 +260,10 @@
   }
 
   .menuLoginBtn {
-    background-color: var(--color-dark-yellow);
-    color: var(--color-white);
     padding: 0px 35px;
   }
 
   .menuRegisterBtn {
-    background: var(--color-light-yellow);
-    color: var(--color-dark-yellow);
     padding: 0px 20px;
   }
 }

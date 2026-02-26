@@ -1,11 +1,10 @@
 .newsCard {
-  width: 361px;
+  width: 100%;
   border-radius: 15px;
   background-color: transparent;
   display: flex;
   flex-direction: column;
-  gap: 28px;
-  padding-bottom: 28px;
+  gap: 24px;
 }
 
 .newsCardFooter {
@@ -17,7 +16,7 @@
 .newsImgCard {
   object-fit: cover;
   width: 100%;
-  height: 226px;
+  height: 190px;
   border-radius: 15px;
 }
 
@@ -25,24 +24,23 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
 .newsCardTitle {
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: 20px;
-  line-height: 130%;
+  font-size: 16px;
+  line-height: 125%;
   letter-spacing: -0.03em;
   color: var(--color-black);
-  min-height: calc(1.3em * 2);
 }
 
 .newsCardText {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 16px;
-  line-height: 125%;
+  font-size: 14px;
+  line-height: 129%;
   letter-spacing: -0.02em;
   color: var(--color-black);
 }
@@ -50,20 +48,68 @@
 .newsCardDate {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 16px;
-  line-height: 125%;
+  font-size: 14px;
+  line-height: 129%;
   letter-spacing: -0.02em;
   color: rgba(38, 38, 38, 0.5);
 }
+
 .newsCardReadMore {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 16px;
-  line-height: 125%;
+  font-size: 14px;
+  line-height: 129%;
   letter-spacing: -0.02em;
   text-decoration: underline;
   text-decoration-skip-ink: none;
   color: var(--color-dark-yellow);
   text-decoration: underline;
   text-decoration-skip-ink: none;
+}
+
+@media (min-width: 768px) {
+  .newsCard {
+    width: 340px;
+    gap: 28px;
+    padding-bottom: 28px;
+  }
+
+  .newsImgCard {
+    height: 226px;
+  }
+
+  .newsCardContent {
+    gap: 14px;
+  }
+
+  .newsCardTitle {
+    font-size: 20px;
+    line-height: 130%;
+    min-height: calc(1.3em * 3);
+  }
+
+  .newsCardText {
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .newsCardDate {
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .newsCardReadMore {
+    font-size: 16px;
+    line-height: 125%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .newsCard {
+    width: 361px;
+  }
+
+  .newsCardTitle {
+    min-height: calc(1.3em * 2);
+  }
 }

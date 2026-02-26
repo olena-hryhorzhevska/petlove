@@ -1,0 +1,81 @@
+.loginMain {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-top: 32px;
+  gap: 32px;
+}
+
+.loginImgCard {
+  position: relative;
+}
+
+.loginCardDesc {
+  position: absolute;
+  display: flex;
+  gap: 8px;
+  background-color: var(--color-white);
+  bottom: 97px;
+  left: 61px;
+  width: 294px;
+  border-radius: 20px;
+  padding: 16px;
+}
+
+.petAvatar {
+  background-color: var(--color-light-yellow);
+  flex: 0 0 60px;
+  border-radius: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.petTopRow {
+  display: flex;
+  gap: 48px;
+}
+
+.petName {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.03em;
+  color: var(--color-dark-yellow);
+}
+
+.petBirthdayLabel {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 117%;
+  letter-spacing: -0.02em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.petBirthdayDate {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 117%;
+  letter-spacing: -0.02em;
+  color: #262626;
+}
+
+.petInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.petText {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 117%;
+  letter-spacing: -0.02em;
+  color: rgba(38, 38, 38, 0.8);
+}

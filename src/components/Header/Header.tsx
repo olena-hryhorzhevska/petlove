@@ -69,7 +69,11 @@ export default function Header({
         </button>
       </header>
       {modalOpen && (
-        <div className={styles.menuOverlay} role="dialog" aria-modal="true">
+        <div
+          className={`${styles.menuOverlay} ${styles[variant]}`}
+          role="dialog"
+          aria-modal="true"
+        >
           <div className={styles.menuPanel}>
             <div className={styles.menuTop}>
               <button

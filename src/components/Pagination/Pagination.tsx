@@ -10,6 +10,7 @@ type Props = {
 export default function Pagination({ page, totalPages, onPageChange }: Props) {
   if (totalPages <= 1) return null;
 
+  const isMobile = window.innerWidth < 768;
   const isFirst = page === 1;
   const isLast = page === totalPages;
 
@@ -32,8 +33,8 @@ export default function Pagination({ page, totalPages, onPageChange }: Props) {
         previousLabel={"<"}
         nextLabel={">"}
         breakLabel={"..."}
-        marginPagesDisplayed={1}
-        pageRangeDisplayed={3}
+        marginPagesDisplayed={isMobile ? 0 : 1}
+        pageRangeDisplayed={isMobile ? 2 : 3}
         containerClassName={styles.pagination}
         pageLinkClassName={styles.pageBtn}
         activeLinkClassName={styles.active}

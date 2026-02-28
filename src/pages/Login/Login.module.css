@@ -6,8 +6,28 @@
   gap: 32px;
 }
 
+.left,
+.right {
+  flex: 1;
+}
+
+.loginHeader {
+  padding: 16px 32px 0;
+}
+.pageWrapper {
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  display: flex;
+}
+
+.loginContainer {
+  width: 100%;
+}
+
 .loginImgCard {
   position: relative;
+  height: 654px;
+  width: 100%;
 }
 
 .loginCardDesc {
@@ -78,4 +98,114 @@
   line-height: 117%;
   letter-spacing: -0.02em;
   color: rgba(38, 38, 38, 0.8);
+}
+
+.formCard {
+  background-color: var(--color-white);
+  border-radius: 60px;
+  height: 654px;
+  padding: 118px 84px;
+}
+
+.loginTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 100%;
+  letter-spacing: -0.04em;
+  color: var(--color-black);
+}
+
+.subtitle {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 122%;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldGroup + .fieldGroup {
+  margin-top: 16px;
+}
+
+.input {
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  padding-left: 16px;
+  height: 52px;
+}
+
+.input::placeholder {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.submitBtn {
+  margin-top: 48px;
+  margin-bottom: 16px;
+  border-radius: 30px;
+  height: 52px;
+  border: none;
+  background-color: var(--color-dark-yellow);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.bottomText {
+  display: flex;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.bottomLink {
+  font-family: var(--font-family);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: var(--color-dark-yellow);
+  margin-left: 2px;
+}
+
+.error {
+  margin-top: 4px;
+  margin-left: 16px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 117%;
+  letter-spacing: -0.03em;
+  color: #ef2447;
 }

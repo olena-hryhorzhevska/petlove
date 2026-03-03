@@ -149,8 +149,61 @@
 .input {
   border: 1px solid rgba(38, 38, 38, 0.15);
   border-radius: 30px;
+  width: 100%;
   padding-left: 16px;
+  padding-right: 50px;
   height: 52px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.03em;
+  color: var(--color-black);
+}
+
+.passWrapper {
+  position: relative;
+}
+
+.eyeIcon {
+  fill: none;
+  color: var(--color-dark-yellow);
+}
+
+.eyeBtn {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.input:hover,
+.input:focus {
+  border-color: var(--color-dark-yellow);
+  outline: none;
+}
+
+.inputError {
+  border-color: #ef2447;
+  color: rgba(38, 38, 38, 0.8);
+}
+
+.inputOkay {
+  border-color: #08aa83;
+}
+
+.inputError:focus,
+.inputError:hover {
+  border-color: #ef2447;
+}
+
+.inputOkay:focus,
+.inputOkay:hover {
+  border-color: #08aa83;
 }
 
 .input::placeholder {
@@ -169,6 +222,7 @@
   height: 52px;
   border: none;
   background-color: var(--color-dark-yellow);
+  transition: background-color 0.2s ease;
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 16px;
@@ -177,6 +231,10 @@
   text-transform: uppercase;
   color: var(--color-white);
   cursor: pointer;
+}
+
+.submitBtn:hover {
+  background-color: #f9b020;
 }
 
 .bottomText {
@@ -197,6 +255,11 @@
   text-decoration-skip-ink: none;
   color: var(--color-dark-yellow);
   margin-left: 2px;
+  transition: color 0.2s ease;
+}
+
+.bottomLink:hover {
+  color: #f9b020;
 }
 
 .error {

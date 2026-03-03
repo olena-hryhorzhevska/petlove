@@ -3,8 +3,11 @@ import Header from "../../components/Header/Header";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { useState } from "react";
 
 export default function Login() {
+  const [showPassword, setShowPassword] = useState(false);
+
   interface FormValues {
     email: string;
     password: string;
@@ -13,7 +16,7 @@ export default function Login() {
     email: "",
     password: "",
   };
-  
+
   const handleSubmit = (data: FormValues) => {
     console.log("Form data:", data);
   };
@@ -81,37 +84,76 @@ export default function Login() {
                 onSubmit={handleSubmit}
                 validationSchema={validationSchema}
               >
-                <Form className={styles.form} autoComplete="on">
-                  <div className={styles.fieldGroup}>
-                    <Field
-                      className={styles.input}
-                      type="email"
-                      name="email"
-                      placeholder="Email"
-                    />
-                    <ErrorMessage
-                      name="email"
-                      component="div"
-                      className={styles.error}
-                    />
-                  </div>
-                  <div className={styles.fieldGroup}>
-                    <Field
-                      className={styles.input}
-                      type="password"
-                      name="password"
-                      placeholder="Password"
-                    />
-                    <ErrorMessage
-                      name="password"
-                      component="div"
-                      className={styles.error}
-                    />
-                  </div>
-                  <button type="submit" className={styles.submitBtn}>
-                    LOG IN
-                  </button>
-                </Form>
+                {({ touched, errors }) => {
+                  const emailState =
+                    touched.email && errors.email
+                      ? styles.inputError
+                      : touched.email && !errors.email
+                      ? styles.inputOkay
+                      : "";
+
+                  const passwordState =
+                    touched.password && errors.password
+                      ? styles.inputError
+                      : touched.password && !errors.password
+                      ? styles.inputOkay
+                      : "";
+
+                  return (
+                    <Form className={styles.form} autoComplete="on">
+                      <div className={styles.fieldGroup}>
+                        <Field
+                          className={`${styles.input} ${emailState}`}
+                          autoComplete="email"
+                          type="email"
+                          name="email"
+                          placeholder="Email"
+                        />
+                        <ErrorMessage
+                          name="email"
+                          component="div"
+                          className={styles.error}
+                        />
+                      </div>
+                      <div className={styles.fieldGroup}>
+                        <div className={styles.passWrapper}>
+                          <Field
+                            className={`${styles.input} ${passwordState}`}
+                            autoComplete="current-password"
+                            type={showPassword ? "text" : "password"}
+                            name="password"
+                            placeholder="Password"
+                          />
+                          <button
+                            type="button"
+                            className={styles.eyeBtn}
+                            onClick={() => setShowPassword(!showPassword)}
+                          >
+                            <svg
+                              width="22"
+                              height="22"
+                              className={styles.eyeIcon}
+                            >
+                              <use
+                                href={`/icons/sprite.svg#${
+                                  showPassword ? "icon-eye-off" : "icon-eye"
+                                }`}
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                        <ErrorMessage
+                          name="password"
+                          component="div"
+                          className={styles.error}
+                        />
+                      </div>
+                      <button type="submit" className={styles.submitBtn}>
+                        LOG IN
+                      </button>
+                    </Form>
+                  );
+                }}
               </Formik>
               <p className={styles.bottomText}>
                 Don’t have an account?

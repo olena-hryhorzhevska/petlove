@@ -38,12 +38,31 @@ export default function Login() {
           {/* { left side} */}
           <section className={styles.left}>
             <div className={styles.loginImgCard}>
-              <img
-                className={styles.dogImage}
-                src="/images/login-dog-1x.png"
-                srcSet="/images/login-dog-1x.png 1x, /images/login-dog-2x.png 2x"
-                alt="Dog"
-              />
+              <picture>
+                <source
+                  media="(min-width: 1280px)"
+                  srcSet="
+          /images/login-dog-1x.png 1x,
+          /images/login-dog-2x.png 2x
+        "
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcSet="
+          /images/tab-login-dog-1x.png 1x,
+          /images/tab-login-dog-2x.png 2x
+        "
+                />
+                <img
+                  className={styles.dogImage}
+                  src="/images/mob-login-dog-1x.png"
+                  srcSet="
+          /images/mob-login-dog-1x.png 1x,
+          /images/mob-login-dog-2x.png 2x
+        "
+                  alt="Dog"
+                />
+              </picture>
               <div className={styles.loginCardDesc}>
                 <div className={styles.petAvatar}>
                   <img
@@ -130,8 +149,6 @@ export default function Login() {
                             onClick={() => setShowPassword(!showPassword)}
                           >
                             <svg
-                              width="22"
-                              height="22"
                               className={styles.eyeIcon}
                             >
                               <use

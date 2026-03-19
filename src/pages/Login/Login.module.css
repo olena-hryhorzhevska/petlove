@@ -1,19 +1,14 @@
 .loginMain {
   display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  margin-top: 32px;
-  gap: 32px;
-}
-
-.left,
-.right {
-  flex: 1;
+  flex-direction: column;
+  margin-top: 26px;
+  gap: 10px;
 }
 
 .loginHeader {
-  padding: 16px 32px 0;
+  padding: 0;
 }
+
 .pageWrapper {
   min-height: 100vh;
   background-color: #f9f9f9;
@@ -26,98 +21,46 @@
 
 .loginImgCard {
   position: relative;
-  height: 654px;
+  height: 280px;
   width: 100%;
 }
 
+.loginImgCard picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.dogImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
 .loginCardDesc {
-  position: absolute;
-  display: flex;
-  gap: 8px;
-  background-color: var(--color-white);
-  bottom: 97px;
-  left: 61px;
-  width: 294px;
-  border-radius: 20px;
-  padding: 16px;
-}
-
-.petAvatar {
-  background-color: var(--color-light-yellow);
-  flex: 0 0 60px;
-  border-radius: 100%;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.petTopRow {
-  display: flex;
-  gap: 48px;
-}
-
-.petName {
-  font-family: var(--font-family);
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 125%;
-  letter-spacing: -0.03em;
-  color: var(--color-dark-yellow);
-}
-
-.petBirthdayLabel {
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 117%;
-  letter-spacing: -0.02em;
-  color: rgba(38, 38, 38, 0.5);
-}
-
-.petBirthdayDate {
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 117%;
-  letter-spacing: -0.02em;
-  color: #262626;
-}
-
-.petInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.petText {
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 117%;
-  letter-spacing: -0.02em;
-  color: rgba(38, 38, 38, 0.8);
+  display: none;
 }
 
 .formCard {
   background-color: var(--color-white);
-  border-radius: 60px;
-  height: 654px;
-  padding: 118px 84px;
+  border-radius: 30px;
+  height: 422px;
+  padding: 60px 20px;
 }
 
 .loginTitle {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-bottom: 32px;
+  gap: 12px;
+  margin-bottom: 24px;
 }
 
 .title {
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: 54px;
+  font-size: 28px;
   line-height: 100%;
   letter-spacing: -0.04em;
   color: var(--color-black);
@@ -126,8 +69,8 @@
 .subtitle {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 18px;
-  line-height: 122%;
+  font-size: 14px;
+  line-height: 129%;
   letter-spacing: -0.02em;
   color: var(--color-black);
 }
@@ -143,20 +86,20 @@
 }
 
 .fieldGroup + .fieldGroup {
-  margin-top: 16px;
+  margin-top: 10px;
 }
 
 .input {
   border: 1px solid rgba(38, 38, 38, 0.15);
   border-radius: 30px;
   width: 100%;
-  padding-left: 16px;
+  padding-left: 12px;
   padding-right: 50px;
-  height: 52px;
+  height: 42px;
   font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 125%;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 129%;
   letter-spacing: -0.03em;
   color: var(--color-black);
 }
@@ -168,11 +111,13 @@
 .eyeIcon {
   fill: none;
   color: var(--color-dark-yellow);
+  width: 18px;
+  height: 18px;
 }
 
 .eyeBtn {
   position: absolute;
-  right: 16px;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
   background: transparent;
@@ -209,24 +154,24 @@
 .input::placeholder {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 16px;
-  line-height: 125%;
+  font-size: 164x;
+  line-height: 129%;
   letter-spacing: -0.03em;
   color: rgba(38, 38, 38, 0.5);
 }
 
 .submitBtn {
-  margin-top: 48px;
-  margin-bottom: 16px;
+  margin-top: 40px;
+  margin-bottom: 12px;
   border-radius: 30px;
-  height: 52px;
+  height: 42px;
   border: none;
   background-color: var(--color-dark-yellow);
   transition: background-color 0.2s ease;
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 16px;
-  line-height: 125%;
+  font-size: 14px;
+  line-height: 129%;
   letter-spacing: -0.03em;
   text-transform: uppercase;
   color: var(--color-white);
@@ -242,8 +187,8 @@
   justify-content: center;
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 14px;
-  line-height: 143%;
+  font-size: 12px;
+  line-height: 117%;
   letter-spacing: -0.03em;
   color: rgba(38, 38, 38, 0.5);
 }
@@ -271,4 +216,217 @@
   line-height: 117%;
   letter-spacing: -0.03em;
   color: #ef2447;
+}
+
+@media (min-width: 768px) {
+  .loginMain {
+    margin-top: 32px;
+    gap: 16px;
+  }
+
+  .loginImgCard {
+    height: 302px;
+  }
+
+  .dogImage {
+    border-radius: 60px;
+  }
+
+  .loginCardDesc {
+    position: absolute;
+    display: flex;
+    gap: 8px;
+    background-color: var(--color-white);
+    bottom: 32px;
+    left: 32px;
+    width: 294px;
+    border-radius: 20px;
+    padding: 18px 16px;
+  }
+
+  .petAvatar {
+    background-color: var(--color-light-yellow);
+    flex: 0 0 60px;
+    border-radius: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .petTopRow {
+    display: flex;
+    gap: 48px;
+  }
+
+  .petName {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%;
+    letter-spacing: -0.03em;
+    color: var(--color-dark-yellow);
+  }
+
+  .petBirthdayLabel {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 117%;
+    letter-spacing: -0.02em;
+    color: rgba(38, 38, 38, 0.5);
+  }
+
+  .petBirthdayDate {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 117%;
+    letter-spacing: -0.02em;
+    color: #262626;
+  }
+
+  .petInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .petText {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 117%;
+    letter-spacing: -0.02em;
+    color: rgba(38, 38, 38, 0.8);
+  }
+
+  .formCard {
+    border-radius: 60px;
+    height: 560px;
+    padding: 71px 140px;
+  }
+
+  /* dkdkd */
+  .loginTitle {
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .title {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 100%;
+    letter-spacing: -0.04em;
+    color: var(--color-black);
+  }
+
+  .subtitle {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 129%;
+    letter-spacing: -0.02em;
+    color: var(--color-black);
+  }
+}
+
+@media (min-width: 1280px) {
+  .loginMain {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    margin-top: 32px;
+    gap: 32px;
+  }
+
+  .loginHeader {
+    padding: 16px 32px 0;
+  }
+
+  .left,
+  .right {
+    flex: 1;
+  }
+
+  .loginImgCard {
+    height: 654px;
+  }
+
+  .loginCardDesc {
+    bottom: 97px;
+    left: 61px;
+    padding: 16px;
+  }
+
+  .formCard {
+    border-radius: 60px;
+    height: 654px;
+    padding: 118px 84px;
+  }
+
+  .loginTitle {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .title {
+    font-weight: 700;
+    font-size: 54px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    line-height: 122%;
+  }
+
+  .fieldGroup + .fieldGroup {
+    margin-top: 16px;
+  }
+
+  .input {
+    padding-left: 16px;
+    height: 52px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: var(--color-black);
+  }
+
+  .eyeIcon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .eyeBtn {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .input::placeholder {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .submitBtn {
+    margin-top: 48px;
+    margin-bottom: 16px;
+    height: 52px;
+    border: none;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .bottomText {
+    font-size: 14px;
+    line-height: 143%;
+  }
 }

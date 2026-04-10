@@ -1,11 +1,11 @@
-.loginMain {
+.registerMain {
   display: flex;
   flex-direction: column;
   margin-top: 26px;
   gap: 10px;
 }
 
-.loginHeader {
+.registerHeader {
   padding: 0;
 }
 
@@ -15,23 +15,23 @@
   display: flex;
 }
 
-.loginContainer {
+.registerContainer {
   width: 100%;
 }
 
-.loginImgCard {
+.registerImgCard {
   position: relative;
   height: 280px;
   width: 100%;
 }
 
-.loginImgCard picture {
+.registerImgCard picture {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.dogImage {
+.petImage {
   display: block;
   width: 100%;
   height: 100%;
@@ -39,18 +39,18 @@
   border-radius: 30px;
 }
 
-.loginCardDesc {
+.registerCardDesc {
   display: none;
 }
 
 .formCard {
   background-color: var(--color-white);
   border-radius: 30px;
-  height: 422px;
-  padding: 60px 20px;
+  min-height: 422px;
+  padding: 27px 20px;
 }
 
-.loginTitle {
+.registerTitle {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -59,7 +59,7 @@
 
 .title {
   font-family: var(--font-family);
-  font-weight: 700;
+  font-weight: 500;
   font-size: 28px;
   line-height: 100%;
   letter-spacing: -0.04em;
@@ -219,20 +219,20 @@
 }
 
 @media (min-width: 768px) {
-  .loginMain {
+  .registerMain {
     margin-top: 32px;
     gap: 16px;
   }
 
-  .loginImgCard {
+  .registerImgCard {
     height: 302px;
   }
 
-  .dogImage {
+  .petImage {
     border-radius: 60px;
   }
 
-  .loginCardDesc {
+  .registerCardDesc {
     position: absolute;
     display: flex;
     gap: 8px;
@@ -304,20 +304,22 @@
 
   .formCard {
     border-radius: 60px;
-    height: 560px;
-    padding: 71px 140px;
+    padding: 30px 140px;
   }
 
-  /* dkdkd */
-  .loginTitle {
+  .fieldGroup + .fieldGroup {
+    margin-top: 16px;
+  }
+
+  .registerTitle {
     gap: 16px;
     margin-bottom: 32px;
   }
 
   .title {
     font-family: var(--font-family);
-    font-weight: 700;
-    font-size: 28px;
+    font-weight: 500;
+    font-size: 54px;
     line-height: 100%;
     letter-spacing: -0.04em;
     color: var(--color-black);
@@ -326,15 +328,20 @@
   .subtitle {
     font-family: var(--font-family);
     font-weight: 500;
-    font-size: 14px;
-    line-height: 129%;
+    font-size: 18px;
+    line-height: 122%;
     letter-spacing: -0.02em;
     color: var(--color-black);
+  }
+
+  .bottomText {
+    font-size: 14px;
+    line-height: 143%;
   }
 }
 
 @media (min-width: 1280px) {
-  .loginMain {
+  .registerMain {
     display: flex;
     flex-direction: row;
     align-items: stretch;
@@ -343,7 +350,7 @@
     gap: 32px;
   }
 
-  .loginHeader {
+  .registerHeader {
     padding: 16px 32px 0;
   }
 
@@ -352,11 +359,11 @@
     flex: 1;
   }
 
-  .loginImgCard {
+  .registerImgCard {
     height: 654px;
   }
 
-  .loginCardDesc {
+  .registerCardDesc {
     bottom: 97px;
     left: 61px;
     padding: 16px;
@@ -365,10 +372,10 @@
   .formCard {
     border-radius: 60px;
     height: 654px;
-    padding: 118px 84px;
+    padding: 77px 84px;
   }
 
-  .loginTitle {
+  .registerTitle {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -376,7 +383,7 @@
   }
 
   .title {
-    font-weight: 700;
+    font-weight: 500;
     font-size: 54px;
   }
 

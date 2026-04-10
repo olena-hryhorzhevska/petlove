@@ -46,7 +46,6 @@
 .formCard {
   background-color: var(--color-white);
   border-radius: 30px;
-  height: 422px;
   padding: 60px 20px;
 }
 
@@ -59,7 +58,7 @@
 
 .title {
   font-family: var(--font-family);
-  font-weight: 700;
+  font-weight: 500;
   font-size: 28px;
   line-height: 100%;
   letter-spacing: -0.04em;
@@ -304,7 +303,6 @@
 
   .formCard {
     border-radius: 60px;
-    height: 560px;
     padding: 71px 140px;
   }
 
@@ -315,19 +313,25 @@
   }
 
   .title {
-    font-family: var(--font-family);
-    font-weight: 700;
-    font-size: 28px;
+    font-weight: 500;
+    font-size: 54px;
     line-height: 100%;
     letter-spacing: -0.04em;
-    color: var(--color-black);
+  }
+
+  .fieldGroup + .fieldGroup {
+    margin-top: 16px;
+  }
+  .submitBtn {
+    margin-top: 64px;
+    margin-bottom: 16px;
   }
 
   .subtitle {
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 14px;
-    line-height: 129%;
+    line-height: 122%;
     letter-spacing: -0.02em;
     color: var(--color-black);
   }
@@ -376,7 +380,7 @@
   }
 
   .title {
-    font-weight: 700;
+    font-weight: 500;
     font-size: 54px;
   }
 

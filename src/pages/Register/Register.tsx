@@ -12,12 +12,12 @@ interface FormValues {
   passwordConfirm: string;
 }
 
-  const initialFormValues: FormValues = {
-    name: "",
-    email: "",
-    password: "",
-    passwordConfirm: "",
-  };
+const initialFormValues: FormValues = {
+  name: "",
+  email: "",
+  password: "",
+  passwordConfirm: "",
+};
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().trim().required("Name is required"),
@@ -43,14 +43,13 @@ export default function Register() {
 
   return (
     <div className={styles.pageWrapper}>
-      <div className={`container ${styles.loginContainer}`}>
-        <div className={styles.loginHeader}>
+      <div className={`container ${styles.registerContainer}`}>
+        <div className={styles.registerHeader}>
           <Header variant="light" showAuthOnTablet />
         </div>
-        <main className={styles.loginMain}>
-          {/* { left side} */}
+        <main className={styles.registerMain}>
           <section className={styles.left}>
-            <div className={styles.loginImgCard}>
+            <div className={styles.registerImgCard}>
               <picture>
                 <source
                   media="(min-width: 1280px)"
@@ -67,7 +66,7 @@ export default function Register() {
         "
                 />
                 <img
-                  className={styles.dogImage}
+                  className={styles.petImage}
                   src="/images/mob-register-cat-1x.png"
                   srcSet="
           /images/mob-register-cat-1x.png 1x,
@@ -76,7 +75,7 @@ export default function Register() {
                   alt="Cat"
                 />
               </picture>
-              <div className={styles.loginCardDesc}>
+              <div className={styles.registerCardDesc}>
                 <div className={styles.petAvatar}>
                   <img
                     src="/images/cat-icon-1x.png"
@@ -100,10 +99,10 @@ export default function Register() {
               </div>
             </div>
           </section>
-          {/* { right side} */}
+
           <section className={styles.right}>
             <div className={styles.formCard}>
-              <div className={styles.loginTitle}>
+              <div className={styles.registerTitle}>
                 <h1 className={styles.title}>Registration</h1>
                 <p className={styles.subtitle}>
                   Thank you for your interest in our platform.
@@ -137,6 +136,7 @@ export default function Register() {
                           className={styles.error}
                         />
                       </div>
+
                       <div className={styles.fieldGroup}>
                         <Field
                           className={`${styles.input} ${getFieldState(
@@ -153,6 +153,7 @@ export default function Register() {
                           className={styles.error}
                         />
                       </div>
+
                       <div className={styles.fieldGroup}>
                         <div className={styles.passWrapper}>
                           <Field

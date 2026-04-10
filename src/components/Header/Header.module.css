@@ -219,6 +219,10 @@
   }
 
   .burgerBtn {
+    margin-left: auto;
+  }
+
+  .authTabletVisible + .burgerBtn {
     margin-left: 16px;
   }
 }

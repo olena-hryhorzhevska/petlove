@@ -1,0 +1,20 @@
+.friendCard {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-white);
+  padding: 12px 12px 40px 20px;
+  border-radius: 15px;
+  width: 371px;
+  height: 196px;
+  position: relative;
+}
+
+.workingTime {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.friendImg {
+  margin-right: 20px;
+}

@@ -1,0 +1,26 @@
+.friendsTitle {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  color: var(--color-black);
+  margin: 96px 0 60px;
+}
+
+.pageWrapper {
+  min-height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.friendsCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  min-width: 0;
+}
+
+.friendsCards > li {
+  flex: 0 0 calc((100% - 20px * 2) / 3);
+  min-width: 0;
+}

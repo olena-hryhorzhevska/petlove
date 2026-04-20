@@ -18,3 +18,44 @@
 .friendImg {
   margin-right: 20px;
 }
+
+.friendTitle {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 130%;
+  letter-spacing: -0.04em;
+  color: var(--color-black);
+  margin-bottom: 20px;
+}
+
+.friendInfoGrey {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: rgba(38, 38, 38, 0.5);
+    display: flex;
+  min-width: 0;
+}
+
+.friendInfo {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+  display: block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.friendDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

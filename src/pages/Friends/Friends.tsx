@@ -11,7 +11,7 @@ const fetchFriends = async () => {
 };
 
 export default function Friends() {
-  const { data, isLoading, error, isError } = useQuery({
+  const { data} = useQuery({
     queryKey: ["friends"],
     queryFn: fetchFriends,
   });

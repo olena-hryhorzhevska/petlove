@@ -3,6 +3,10 @@ import styles from "./FriendCard.module.css";
 
 export default function FriendCard({ friend }: { friend: FriendsItem }) {
   const openDay = friend.workDays?.find((day) => day.isOpen);
+  const whiskas = "whiskas@gmail.com";
+  const lico = "lico@gmail.com";
+  const barbos = "barbos@gmail.com";
+
   return (
     <>
       <li className={styles.friendCard}>
@@ -10,14 +14,21 @@ export default function FriendCard({ friend }: { friend: FriendsItem }) {
           className={styles.friendImg}
           src={friend.imageUrl}
           alt="friend image"
-          width={90}
-          height={90}
         />
-        <div>
+        <div className={styles.friendContent}>
           <h3 className={styles.friendTitle}>{friend.title}</h3>
           <div className={styles.friendDetails}>
             <p className={styles.friendInfoGrey}>
-              Email: <span className={styles.friendInfo}>{friend.email}</span>
+              Email:{" "}
+              <span className={styles.friendInfo}>
+                {friend.title === "Whiskas"
+                  ? whiskas
+                  : friend.title === "Lico"
+                    ? lico
+                    : friend.title === "Barbos"
+                      ? barbos
+                      : friend.email}
+              </span>
             </p>
             <p className={styles.friendInfoGrey}>
               Address:{" "}

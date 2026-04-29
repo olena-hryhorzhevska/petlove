@@ -4,6 +4,7 @@ import { FriendsResponse } from "../../types/friends";
 import Header from "../../components/Header/Header";
 import styles from "./Friends.module.css";
 import FriendCard from "../../components/FriendCard/FriendCard";
+import Loader from "../../components/Loader/Loader";
 
 const fetchFriends = async () => {
   const res = await api.get<FriendsResponse>("/friends");
@@ -11,12 +12,18 @@ const fetchFriends = async () => {
 };
 
 export default function Friends() {
-  const { data} = useQuery({
+  const { data, isLoading, isError, error } = useQuery({
     queryKey: ["friends"],
     queryFn: fetchFriends,
   });
-  console.log(data);
-  
+
+  if (isLoading) return <Loader />;
+  if (isError) {
+    return (
+      <p>Error: {error instanceof Error ? error.message : "Unknown error"}</p>
+    );
+  }
+  if (!data || data.length === 0) return <p>No friends found.</p>;
 
   return (
     <div className={styles.pageWrapper}>

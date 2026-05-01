@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { api } from "../../api/axios";
 import { NoticesResponse } from "../../types/notices";
 import NoticesList from "../../components/NoticesList/NoticesList";
+import styles from "./Notices.module.css";
 
 export default function Notices() {
   const fetchNotices = async () => {
@@ -16,14 +17,16 @@ export default function Notices() {
   });
 
   return (
-    <div className={`containerWide`}>
-      <Header variant="light" showAuthOnTablet />
-      <h1>Find your favorite pet</h1>
-      <ul>
-        {data?.map((notice) => (
-          <NoticesList key={notice._id} notice={notice} />
-        ))}
-      </ul>
+    <div className={styles.pageWrapper}>
+      <div className={`containerWide`}>
+        <Header variant="light" showAuthOnTablet />
+        <h1>Find your favorite pet</h1>
+        <ul className={styles.noticesCards}>
+          {data?.map((notice) => (
+            <NoticesList key={notice._id} notice={notice} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

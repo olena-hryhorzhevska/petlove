@@ -1,0 +1,16 @@
+.pageWrapper {
+  min-height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.noticesCards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 32px;
+  min-width: 0;
+}
+
+.noticesCards > li {
+  flex: 0 0 calc((100% - 32px * 2) / 3);
+}

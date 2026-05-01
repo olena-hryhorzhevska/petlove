@@ -40,7 +40,7 @@ export default function Header({
           <NavLink className={getNavClass} to="/news">
             News
           </NavLink>
-          <NavLink className={getNavClass} to="/find">
+          <NavLink className={getNavClass} to="/notices">
             Find pet
           </NavLink>
           <NavLink className={getNavClass} to="/friends">
@@ -90,7 +90,11 @@ export default function Header({
               <NavLink className={getNavClass} to="/news" onClick={closeMenu}>
                 News
               </NavLink>
-              <NavLink className={getNavClass} to="/find" onClick={closeMenu}>
+              <NavLink
+                className={getNavClass}
+                to="/notices"
+                onClick={closeMenu}
+              >
                 Find pet
               </NavLink>
               <NavLink

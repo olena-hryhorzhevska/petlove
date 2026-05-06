@@ -6,10 +6,12 @@ type Props = {
 };
 
 export default function NoticesList({ notice }: Props) {
-  const date = notice.birthday;
-  const [year, month, day] = date.split("-");
-  const formattedDate = `${day}.${month}.${year}`;
-  const correctName = notice.name.split(" ").slice(0, 1).join(" ");
+  const formattedDate = notice.birthday
+    ? notice.birthday.split("-").reverse().join(".")
+    : "Unknown";
+  const correctName = notice.name
+    ? notice.name.split(" ").slice(0, 1).join(" ")
+    : "Unknown";
 
   return (
     <>
@@ -18,7 +20,12 @@ export default function NoticesList({ notice }: Props) {
         <div className={styles.content}>
           <div className={styles.metaTitleGroup}>
             <h3 className={styles.title}>{notice.title}</h3>
-            <p className={styles.popularity}>{notice.popularity}</p>
+            <div className={styles.popularityGroup}>
+              <svg className={styles.starIcon}>
+                <use href="/icons/sprite.svg#icon-star" />
+              </svg>
+              <p className={styles.popularity}>{notice.popularity}</p>
+            </div>
           </div>
           <div className={styles.metaItem}>
             <div className={styles.metaDetails}>
@@ -46,10 +53,14 @@ export default function NoticesList({ notice }: Props) {
         </div>
 
         <div className={styles.buttonGroup}>
-          <p className={styles.price}>${notice.price}</p>
+          <p className={styles.price}>${(notice.price ?? 150).toFixed(2)}</p>
           <div className={styles.buttons}>
             <button className={styles.learnMore}>Learn more</button>
-            <button className={styles.heart}>heart</button>
+            <button className={styles.heartButton}>
+              <svg className={styles.heartIcon}>
+                <use href="/icons/sprite.svg#icon-heart" />
+              </svg>
+            </button>
           </div>
         </div>
       </li>

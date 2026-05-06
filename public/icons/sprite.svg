@@ -41,4 +41,31 @@
       </clipPath>
     </defs>
   </symbol>
+  <symbol id="icon-heart" viewBox="0 0 18 18">
+    <path
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="1.5"
+    d="M15.63 3.458a4.125 4.125 0 0 0-5.834 0L9 4.253l-.795-.796A4.126 4.126 0 0 0 2.37 9.294l.795.795L9 15.923l5.835-5.835.795-.795a4.127 4.127 0 0 0 0-5.835"
+  />
+  </symbol>
+  <symbol id="icon-star" viewBox="0 0 15 14">
+    <path
+    fill="#ffc531"
+    stroke="#ffc531"
+    stroke-width="1.2"
+    d="M8.89 4.126c.159.301.449.512.785.57l3.8.656-2.688 2.768a1.1 1.1 0 0 0-.3.923l.55 3.817-3.462-1.701-.117-.05a1.1 1.1 0 0 0-.736 0l-.118.05-3.461 1.701.55-3.817a1.1 1.1 0 0 0-.3-.923L.704 5.352l3.8-.656a1.1 1.1 0 0 0 .786-.57L7.09.715z"
+  />
+  </symbol>
+  <symbol id="icon-chevron-down" viewBox="0 0 18 18">
+  <path
+    d="m4.5 6.75 4.5 4.5 4.5-4.5"
+    stroke="#262626"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</symbol>
 </svg>

@@ -1,13 +1,14 @@
 import styles from "./CategoryFilter.module.css";
 
 type Props = {
+  category: string;
   setCategory: (category: string) => void;
   closeDropdown: () => void;
 };
 
 const categories = ["sell", "free", "lost", "found"];
 
-export default function CategoryFilter({ setCategory, closeDropdown }: Props) {
+export default function CategoryFilter({category, setCategory, closeDropdown }: Props) {
   const handleSelect = (value: string) => {
     setCategory(value);
     closeDropdown();
@@ -17,7 +18,7 @@ export default function CategoryFilter({ setCategory, closeDropdown }: Props) {
     <div className={styles.dropdown}>
       <button
         type="button"
-        className={styles.dropdownItem}
+        className={`${styles.dropdownItem} ${category === "" ? styles.active : ""}`}
         onClick={() => handleSelect("")}
       >
         Show all
@@ -27,7 +28,7 @@ export default function CategoryFilter({ setCategory, closeDropdown }: Props) {
         <button
           key={item}
           type="button"
-          className={styles.dropdownItem}
+          className={`${styles.dropdownItem} ${category === item ? styles.active : ""}`}
           onClick={() => handleSelect(item)}
         >
           {item.charAt(0).toUpperCase() + item.slice(1)}

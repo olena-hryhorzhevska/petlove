@@ -1,14 +1,29 @@
 import { useState } from "react";
 import styles from "./NoticesFilterBlock.module.css";
 import CategoryFilter from "../CategoryFilter/CategoryFilter";
+import GenderFilter from "../GenderFilter/GenderFilter";
+import SpeciesFilter from "../SpeciesFilter/SpeciesFilter";
 
 type Props = {
   category: string;
   setCategory: (category: string) => void;
+  gender: string;
+  setGender: (gender: string) => void;
+  species: string;
+  setSpecies: (species: string) => void;
 };
 
-export default function NoticesFilters({ category, setCategory }: Props) {
+export default function NoticesFilters({
+  category,
+  setCategory,
+  gender,
+  setGender,
+  species,
+  setSpecies,
+}: Props) {
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
+  const [isGenderOpen, setIsGenderOpen] = useState(false);
+  const [isSpeciesOpen, setIsSpeciesOpen] = useState(false);
 
   return (
     <div className={styles.filters}>
@@ -35,6 +50,7 @@ export default function NoticesFilters({ category, setCategory }: Props) {
 
           {isCategoryOpen && (
             <CategoryFilter
+              category={category}
               setCategory={setCategory}
               closeDropdown={() => setIsCategoryOpen(false)}
             />
@@ -42,17 +58,39 @@ export default function NoticesFilters({ category, setCategory }: Props) {
         </div>
 
         <div className={styles.filterGroup}>
-          <button className={styles.filterBtn}>By gender</button>
+          <button
+            type="button"
+            className={styles.filterBtn}
+            onClick={() => setIsGenderOpen((prev) => !prev)}
+          >
+            {gender.charAt(0).toUpperCase() + gender.slice(1) || "By gender"}
+          </button>
           <svg className={styles.chevronIcon}>
             <use href="/icons/sprite.svg#icon-chevron-down" />
           </svg>
+          {isGenderOpen && (
+            <GenderFilter
+              gender={gender}
+              setGender={setGender}
+              closeDropdown={() => setIsGenderOpen(false)}
+            />
+          )}
         </div>
 
         <div className={styles.filterGroup}>
-          <button className={styles.filterBtn}>By type</button>
+          <button className={styles.filterBtn} onClick={() => setIsSpeciesOpen((prev) => !prev)}>
+            {species.charAt(0).toUpperCase() + species.slice(1) || "By type"}
+          </button>
           <svg className={styles.chevronIcon}>
             <use href="/icons/sprite.svg#icon-chevron-down" />
           </svg>
+          {isSpeciesOpen && (
+            <SpeciesFilter
+              species={species}
+              setSpecies={setSpecies}
+              closeDropdown={() => setIsSpeciesOpen(false)}
+            />
+          )}
         </div>
 
         <div className={styles.locationGroup}>

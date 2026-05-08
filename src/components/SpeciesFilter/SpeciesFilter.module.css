@@ -4,12 +4,32 @@
   left: 0;
   z-index: 10;
   width: 100%;
-  padding: 14px;
+  padding: 14px 7px 14px 14px;
   border-radius: 15px;
   background-color: var(--color-white);
+}
+
+.dropdownScroll {
+  max-height: 216px;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  padding-right: 7px;
+}
+
+.dropdownScroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dropdownScroll::-webkit-scrollbar-thumb {
+  border-radius: 13px;
+  background: rgba(38, 38, 38, 0.08);
+  min-height: 100px;
+}3
+
+.dropdownScroll::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .dropdownItem {
@@ -33,3 +53,4 @@
 .active {
   color: var(--color-dark-yellow);
 }
+

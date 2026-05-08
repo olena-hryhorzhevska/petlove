@@ -10,18 +10,22 @@ import Loader from "../../components/Loader/Loader";
 
 export default function Notices() {
   const [category, setCategory] = useState<string>("");
+  const [gender, setGender] = useState<string>("");
+  const [species, setSpecies] = useState<string>("");
 
   const fetchNotices = async () => {
     const res = await api.get<NoticesResponse>("/notices", {
       params: {
         category: category || undefined,
+        sex: gender || undefined,
+        species: species || undefined,
       },
     });
     return res.data.results;
   };
 
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["notices", category],
+    queryKey: ["notices", category, gender, species],
     queryFn: fetchNotices,
   });
 
@@ -37,7 +41,7 @@ export default function Notices() {
       <div className={`containerWide`}>
         <Header variant="light" showAuthOnTablet />
         <h1 className={styles.pageTitle}>Find your favorite pet</h1>
-        <NoticesFilterBlock category={category} setCategory={setCategory} />
+        <NoticesFilterBlock category={category} setCategory={setCategory} gender={gender} setGender={setGender} species={species} setSpecies={setSpecies} />
         <ul className={styles.noticesCards}>
           {data && data.length > 0 ? (
             data.map((notice) => (

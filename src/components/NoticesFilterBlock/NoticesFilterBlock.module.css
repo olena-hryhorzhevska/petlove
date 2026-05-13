@@ -97,3 +97,30 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
+.clearLocationBtn {
+  position: absolute;
+  right: 36px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.clearIcon {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.locationInput:focus,
+.searchInput:focus {
+  outline: 1px solid var(--color-dark-yellow);
+}
+
+.active {
+  background-color: var(--color-dark-yellow);
+  color: var(--color-white);
+}

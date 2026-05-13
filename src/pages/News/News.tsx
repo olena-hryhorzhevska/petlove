@@ -33,7 +33,6 @@ export default function News() {
     queryKey: ["news", page, limit, searchInput],
     queryFn: () => fetchNews(page, limit, searchInput),
     placeholderData: (prev) => prev,
-
   });
 
   if (isLoading) return <Loader/>;

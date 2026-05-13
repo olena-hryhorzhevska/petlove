@@ -59,7 +59,7 @@
   />
   </symbol>
   <symbol id="icon-chevron-down" viewBox="0 0 18 18">
-  <path
+    <path
     d="m4.5 6.75 4.5 4.5 4.5-4.5"
     stroke="#262626"
     stroke-width="2"
@@ -67,5 +67,15 @@
     stroke-linejoin="round"
     fill="none"
   />
-</symbol>
+  </symbol>
+  <symbol id="icon-close" viewBox="0 0 18 18">
+    <path
+    d="m14.25 3.75-10.5 10.5m0-10.5 10.5 10.5"
+    stroke="#262626"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+  </symbol>
 </svg>
